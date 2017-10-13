@@ -13,9 +13,12 @@ Fork of grpc cpp examples and build with conan.
 	* `premake5.exe --os=linux gmake` to generate Makefile.
 
 ### Change settings
-The default setting may be release_x64 which can see in the generated conaninfo.txt.
+The default setting may be Release_x64 which can see in the generated conaninfo.txt.
 You can add settings in `conan install` like:
 ```
 conan install . --build missing -s build_type=Debug -s arch=x86_64 -s compiler.runtime=MDd
 ```
 
+Visual Studio has multiple configurations like Release_x64 and Debug_x32,
+ but the generated sln must be used only for the configuration
+ which is set in `conan install`.
