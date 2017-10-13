@@ -23,6 +23,10 @@ workspace "GrpcExamplesCpp"
 	filter "configurations:Release"
 		defines { "NDEBUG" }
 		optimize "On"
+	filter "system:windows"
+		defines {
+			"_WIN32_WINNT=0x0600"  -- i.e. Windows 7 target
+		}
 	filter {}
 
 	includedirs { conan_includedirs }
@@ -33,25 +37,30 @@ group "helloworld"
 
 project "greeter_client"
 	kind "ConsoleApp"
-	files { "helloworld/**.h", "helloworld/**.cc" }
+	files { "helloworld/helloworld*.*", "helloworld/greeter_client.*" }
 project "greeter_server"
 	kind "ConsoleApp"
-	files { "helloworld/**.h", "helloworld/**.cc" }
+	files { "helloworld/helloworld*.*", "helloworld/greeter_server.*" }
 project "greeter_async_client"
 	kind "ConsoleApp"
-	files { "helloworld/**.h", "helloworld/**.cc" }
+	files { "helloworld/helloworld*.*", "helloworld/greeter_async_client.*" }
+project "greeter_async_client2"
+	kind "ConsoleApp"
+	files { "helloworld/helloworld*.*", "helloworld/greeter_async_client2.*" }
 project "greeter_async_server"
 	kind "ConsoleApp"
-	files { "helloworld/**.h", "helloworld/**.cc" }
+	files { "helloworld/helloworld*.*", "helloworld/greeter_async_server.*" }
   
 group "route_guide"
 
 project "route_guide_client"
 	kind "ConsoleApp"
-	files { "route_guide/**.h", "route_guide/**.cc" }
+	files { "route_guide/**" }
+	removefiles { "route_guide/*_server.*" }
 project "route_guide_server"
 	kind "ConsoleApp"
-	files { "route_guide/**.h", "route_guide/**.cc" }
+	files { "route_guide/**" }
+	removefiles { "route_guide/*_client.*" }
 
 group ""  -- End of group
 

@@ -35,3 +35,4 @@
 /conanpremake.lua
 /vs20*
 /*.bat
+/gmake
