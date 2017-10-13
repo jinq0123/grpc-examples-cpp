@@ -36,3 +36,4 @@
 /vs20*
 /*.bat
 /gmake
+/premake5.exe
