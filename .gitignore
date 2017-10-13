@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+/conaninfo.txt
+/conanpremake.lua
+/vs20*
