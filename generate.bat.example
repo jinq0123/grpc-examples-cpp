@@ -1,8 +1,8 @@
 REM Generate source files from proto files.
 
 set PROTOC=D:/Tools/protoc-3.4.0-win32/bin/protoc.exe
-set PLUGIN_EXE=C:/.conan/nqjjqt/1/bin/grpc_cpp_plugin.exe
-
+REM See conanpremake.lua conan_bindirs = {"C:/.conan/gu3plc/1/bin", ...
+set PLUGIN_EXE=C:/.conan/gu3plc/1/bin/grpc_cpp_plugin.exe
 
 %PROTOC% -Ihelloworld --cpp_out=helloworld helloworld/helloworld.proto
 %PROTOC% -Ihelloworld --grpc_out=helloworld ^
