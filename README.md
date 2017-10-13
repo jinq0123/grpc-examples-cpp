@@ -13,7 +13,7 @@ Build grpc cpp examples with conan and premake.
 	* `premake5.exe --os=linux gmake` to generate Makefile.
 
 ### Change settings
-The default setting may be Release_x64 which can see in the generated conaninfo.txt.
+The default setting may be Release_x64 which can be seen in the generated conaninfo.txt.
 You can add settings in `conan install` like:
 ```
 conan install . --build missing -s build_type=Debug -s arch=x86_64 -s compiler.runtime=MDd
