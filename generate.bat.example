@@ -1,0 +1,17 @@
+REM Generate source files from proto files.
+
+set PROTOC=D:/Tools/protoc-3.4.0-win32/bin/protoc.exe
+set PLUGIN_EXE=C:/.conan/nqjjqt/1/bin/grpc_cpp_plugin.exe
+
+
+%PROTOC% -Ihelloworld --cpp_out=helloworld helloworld/helloworld.proto
+%PROTOC% -Ihelloworld --grpc_out=helloworld ^
+  --plugin=protoc-gen-grpc=%PLUGIN_EXE% ^
+  helloworld/helloworld.proto
+
+%PROTOC% -Iroute_guide --cpp_out=route_guide route_guide/route_guide.proto
+%PROTOC% -Iroute_guide --grpc_out=route_guide ^
+  --plugin=protoc-gen-grpc=%PLUGIN_EXE% ^
+  route_guide/route_guide.proto
+
+pause
