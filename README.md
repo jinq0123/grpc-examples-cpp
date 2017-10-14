@@ -22,3 +22,16 @@ conan install . --build missing -s build_type=Debug -s arch=x86_64 -s compiler.r
 Visual Studio has multiple configurations like Release_x64 and Debug_x32,
  but the generated sln must be used only for the configuration
  which is set in `conan install`.
+
+## Run
+```
+vs2015\bin\x64\Release\greeter_async_client.exe  
+vs2015\bin\x64\Release\greeter_async_client2.exe 
+vs2015\bin\x64\Release\greeter_async_server.exe  
+vs2015\bin\x64\Release\greeter_client.exe        
+vs2015\bin\x64\Release\greeter_server.exe        
+```
+```
+vs2015\bin\x64\Release\route_guide_client.exe --db_path=route_guide/route_guide_db.json
+vs2015\bin\x64\Release\route_guide_server.exe --db_path=route_guide/route_guide_db.json   
+``` 
